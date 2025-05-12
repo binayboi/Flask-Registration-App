@@ -38,7 +38,7 @@ your_project/
 
 3. **Run the Flask app**
    ```bash
-   python app.py
+   python3 app.py
    ```
 
 4. **Visit the app in your browser**
