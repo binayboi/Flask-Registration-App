@@ -23,7 +23,7 @@ jobs:
 
       - name: Build Docker image and capture logs
         run: |
-          docker build -t bakare1234844/flask-devops-app:latest . > build.log 2>&1
+          docker build -t vinay1304/flask-devops-app:latest . > build.log 2>&1
         continue-on-error: true
 
       - name: Upload build log
