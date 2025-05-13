@@ -21,9 +21,13 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v5
+      - name: Build Docker image and capture logs
+        run: |
+          docker build -t bakare1234844/flask-devops-app:latest . > build.log 2>&1
+        continue-on-error: true
+
+      - name: Upload build log
+        uses: actions/upload-artifact@v4
         with:
-          context: .
-          push: true
-          tags: vinay1304/flask-devops-app:latest
+          name: docker-build-log
+          path: build.log
